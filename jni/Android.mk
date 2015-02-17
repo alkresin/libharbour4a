@@ -501,16 +501,15 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(LETO_DIR)/source/client/letocl.c \
    $(LETO_DIR)/source/client/leto1.c \
    $(LETO_DIR)/source/client/letomgmn.c \
-   $(LETO_DIR)/obj/b32/rddsys.c \
    $(LETO_DIR)/source/common/blowfish.c \
    $(LETO_DIR)/source/common/common_c.c \
    $(LETO_DIR)/source/common/hbip.c
                                    
-LOCAL_C_INCLUDES += $(HARBOUR_DIR)\include \
-   $(HARBOUR_DIR)\src\compiler\$(HC_DIR) \
-   $(HARBOUR_DIR)\src\macro\$(HC_DIR) \
-   $(HARBOUR_DIR)\src\codepage \
-   $(HARBOUR_DIR)\src\3rd\pcre \
+LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
+   $(HARBOUR_DIR)/src/compiler/$(HC_DIR) \
+   $(HARBOUR_DIR)/src/macro/$(HC_DIR) \
+   $(HARBOUR_DIR)/src/codepage \
+   $(HARBOUR_DIR)/src/3rd/pcre \
    $(LETO_DIR)/include \
    \android\android-ndk-r10d\platforms\android-19\arch-arm\usr\include
                     
