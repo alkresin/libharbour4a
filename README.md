@@ -8,7 +8,10 @@ In fact, for Android development most of codepage files may be needed only for t
 The codepage of an application must be the utf-8.
 
 To build your copy of libharbour.so you will need to change some paths in the ndkBuild.bat.
-The HC_DIR variable is the relative path to the compiled Harbour sources, where .o, .obj, .c ( compiled from prg ) are placed.
-It depends of the compiler and platform you use to build Harbour. For example, if you use the Borland C compiler under Windows,
-this path will be obj/win/bcc, for Linux it is usually obj/linux/gcc.
+It is supposed, that you have Harbour, compiled from sources, so there are
+obj/ directories in your Harbour sources, where .o, .obj, .c ( compiled from prg )
+are placed. The HC_DIR variable is the relative path to them, it depends of the
+compiler and platform you use to build Harbour. For example, if you use the
+Borland C compiler under Windows, this path will be obj/win/bcc, for Linux it is
+usually obj/linux/gcc.
 
