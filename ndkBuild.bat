@@ -1,4 +1,4 @@
-@set NDK_HOME=e:\Android\android-ndk-r10d
+@set NDK_HOME=c:\Android\android-ndk-r10d
 @set NDK_LIBS_OUT=lib
 
 @set HARBOUR_DIR=c:/harbour

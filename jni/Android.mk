@@ -339,6 +339,7 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/rtl/hbzlib.c \
    $(HARBOUR_DIR)/src/rtl/hbzlibc.c \
    $(HARBOUR_DIR)/src/rtl/hbzlibgz.c \
+   $(HARBOUR_DIR)/src/rtl/hbznet.c \
    $(HARBOUR_DIR)/src/rtl/idle.c \
    $(HARBOUR_DIR)/src/rtl/inkey.c \
    $(HARBOUR_DIR)/src/rtl/inkeyapi.c \
@@ -503,7 +504,9 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(LETO_DIR)/source/client/letomgmn.c \
    $(LETO_DIR)/source/common/blowfish.c \
    $(LETO_DIR)/source/common/common_c.c \
-   $(LETO_DIR)/source/common/hbip.c
+   $(LETO_DIR)/source/common/hbip.c \
+   \
+   $(HARBOUR_DIR)/contrib/hbnetio/netiocli.c \
                                    
 LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
    $(HARBOUR_DIR)/src/compiler/$(HC_DIR) \
@@ -511,6 +514,7 @@ LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
    $(HARBOUR_DIR)/src/codepage \
    $(HARBOUR_DIR)/src/3rd/pcre \
    $(LETO_DIR)/include \
+   $(HARBOUR_DIR)/contrib/hbnetio \
    \android\android-ndk-r10d\platforms\android-19\arch-arm\usr\include
                     
 LOCAL_LDLIBS := -llog 
