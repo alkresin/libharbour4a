@@ -3,7 +3,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := harbour
-LOCAL_CFLAGS := -Werror -DHB_HAS_PCRE -DHAVE_CONFIG_H
+LOCAL_CFLAGS := -Werror -DHB_HAS_PCRE -DHAVE_CONFIG_H -DHB_MT_VM
 
 HARBOUR_PRG_FILES := $(HARBOUR_DIR)/src/vm/$(HC_DIR)/harbinit.c \
    $(HARBOUR_DIR)/src/rdd/$(HC_DIR)/dbstrux.c \
@@ -225,7 +225,6 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/rdd/dbsql.c \
    $(HARBOUR_DIR)/src/rdd/delim1.c \
    $(HARBOUR_DIR)/src/rdd/fieldhb.c \
-   $(HARBOUR_DIR)/src/rdd/hbdbsort.c \
    $(HARBOUR_DIR)/src/rdd/ordcount.c \
    $(HARBOUR_DIR)/src/rdd/ordwldsk.c \
    $(HARBOUR_DIR)/src/rdd/rddinfo.c \
