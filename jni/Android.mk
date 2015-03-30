@@ -5,21 +5,40 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := harbour
 LOCAL_CFLAGS := -Werror -DHB_HAS_PCRE -DHAVE_CONFIG_H -DHB_MT_VM
 
-HARBOUR_PRG_FILES := $(HARBOUR_DIR)/src/vm/$(HC_DIR)/harbinit.c \
-   $(HARBOUR_DIR)/src/rdd/$(HC_DIR)/dbstrux.c \
-   $(HARBOUR_DIR)/src/rdd/$(HC_DIR)/rddsys.c \
-   $(HARBOUR_DIR)/src/rdd/$(HC_DIR)/rddord.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/adir.c \
+HARBOUR_PRG_FILES := ../obj/harbinit.c \
+   ../obj/dbstrux.c \
+   ../obj/rddsys.c \
+   ../obj/rddord.c \
+   ../obj/adir.c \
    errsys.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/hbfilehi.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/hbini.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/memvarhb.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/objfunc.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/tclass.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/tobject.c \
-   $(HARBOUR_DIR)/src/rtl/$(HC_DIR)/valtoexp.c \
-   $(HARBOUR_DIR)/src/rdd/hbsix/$(HC_DIR)/sxcompat.c \
-   $(HARBOUR_DIR)/src/rdd/hbsix/$(HC_DIR)/sxtrig.c
+   ../obj/hbfilehi.c \
+   ../obj/hbini.c \
+   ../obj/memvarhb.c \
+   ../obj/objfunc.c \
+   ../obj/tclass.c \
+   ../obj/tobject.c \
+   ../obj/valtoexp.c \
+   ../obj/sxcompat.c \
+   ../obj/sxtrig.c \
+   \
+   ../obj/cgi.c \
+   ../obj/client.c \
+   ../obj/credent.c \
+   ../obj/encb64.c \
+   ../obj/encoder.c \
+   ../obj/encqp.c \
+   ../obj/encurl.c \
+   ../obj/ftpcli.c \
+   ../obj/httpcli.c \
+   ../obj/log.c \
+   ../obj/mail.c \
+   ../obj/popcli.c \
+   ../obj/sendmail.c \
+   ../obj/sessid.c \
+   ../obj/smtpcli.c \
+   ../obj/thtml.c \
+   ../obj/url.c
+
 
 LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    \
@@ -506,6 +525,10 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(LETO_DIR)/source/common/hbip.c \
    \
    $(HARBOUR_DIR)/contrib/hbnetio/netiocli.c \
+   \
+   $(HARBOUR_DIR)/contrib/hbtip/encurlc.c \
+   $(HARBOUR_DIR)/contrib/hbtip/mime.c \
+   $(HARBOUR_DIR)/contrib/hbtip/misc.c
                                    
 LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
    $(HARBOUR_DIR)/src/compiler/$(HC_DIR) \
@@ -514,6 +537,8 @@ LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
    $(HARBOUR_DIR)/src/3rd/pcre \
    $(LETO_DIR)/include \
    $(HARBOUR_DIR)/contrib/hbnetio \
+   $(HARBOUR_DIR)/contrib/hbtip \
+   $(HARBOUR_DIR)/contrib/hbssl \
    \android\android-ndk-r10d\platforms\android-19\arch-arm\usr\include
                     
 LOCAL_LDLIBS := -llog 
