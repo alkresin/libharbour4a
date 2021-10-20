@@ -10,7 +10,7 @@ HARBOUR_PRG_FILES := ../obj/harbinit.c \
    ../obj/rddsys.c \
    ../obj/rddord.c \
    ../obj/adir.c \
-   errsys.c \
+   ../obj/errsys.c \
    ../obj/hbfilehi.c \
    ../obj/hbini.c \
    ../obj/memvarhb.c \
@@ -23,7 +23,6 @@ HARBOUR_PRG_FILES := ../obj/harbinit.c \
    \
    ../obj/cgi.c \
    ../obj/client.c \
-   ../obj/credent.c \
    ../obj/encb64.c \
    ../obj/encoder.c \
    ../obj/encqp.c \
@@ -31,14 +30,9 @@ HARBOUR_PRG_FILES := ../obj/harbinit.c \
    ../obj/ftpcli.c \
    ../obj/httpcli.c \
    ../obj/log.c \
-   ../obj/mail.c \
-   ../obj/popcli.c \
-   ../obj/sendmail.c \
    ../obj/sessid.c \
-   ../obj/smtpcli.c \
    ../obj/thtml.c \
    ../obj/url.c
-
 
 LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    \
@@ -171,7 +165,7 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/compiler/hbstripl.c \
    $(HARBOUR_DIR)/src/compiler/hbusage.c \
    $(HARBOUR_DIR)/src/compiler/ppcomp.c \
-   $(HARBOUR_DIR)/src/compiler/$(HC_DIR)/harboury.c \
+   $(HARBOUR_DIR)/src/compiler/harboury.c \
    $(HARBOUR_DIR)/src/debug/dbgentry.c \
    \
    $(HARBOUR_DIR)/src/lang/l_be.c \
@@ -213,12 +207,12 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/macro/macroa.c \
    $(HARBOUR_DIR)/src/macro/macrob.c \
    $(HARBOUR_DIR)/src/macro/macrolex.c \
-   $(HARBOUR_DIR)/src/macro/$(HC_DIR)/macroy.c \
+   $(HARBOUR_DIR)/src/macro/macroy.c \
    \
    $(HARBOUR_DIR)/src/pp/ppcore.c \
    $(HARBOUR_DIR)/src/pp/pplib.c \
    $(HARBOUR_DIR)/src/pp/pplib2.c \
-   $(HARBOUR_DIR)/src/pp/$(HC_DIR)/pptable.c \
+   $(HARBOUR_DIR)/src/pp/pptable.c \
    \
    $(HARBOUR_DIR)/src/rdd/dbcmd.c \
    $(HARBOUR_DIR)/src/rdd/dbcmd53.c \
@@ -387,9 +381,7 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/rtl/oldbox.c \
    $(HARBOUR_DIR)/src/rtl/oldclear.c \
    $(HARBOUR_DIR)/src/rtl/pad.c \
-   $(HARBOUR_DIR)/src/rtl/padc.c \
-   $(HARBOUR_DIR)/src/rtl/padl.c \
-   $(HARBOUR_DIR)/src/rtl/padr.c \
+   $(HARBOUR_DIR)/src/rtl/padx.c \
    $(HARBOUR_DIR)/src/rtl/philes.c \
    $(HARBOUR_DIR)/src/rtl/philes53.c \
    $(HARBOUR_DIR)/src/rtl/rat.c \
@@ -437,6 +429,7 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/rtl/valtostr.c \
    $(HARBOUR_DIR)/src/rtl/valtype.c \
    $(HARBOUR_DIR)/src/rtl/version.c \
+   $(HARBOUR_DIR)/src/rtl/vfile.c \
    $(HARBOUR_DIR)/src/rtl/word.c \
    $(HARBOUR_DIR)/src/rtl/xhelp.c \
    $(HARBOUR_DIR)/src/rtl/xsavescr.c \
@@ -517,30 +510,21 @@ LOCAL_SRC_FILES  := $(HARBOUR_PRG_FILES) \
    $(HARBOUR_DIR)/src/3rd/zlib/uncompr.c \
    $(HARBOUR_DIR)/src/3rd/zlib/zutil.c \
    \
-   $(LETO_DIR)/source/client/letocl.c \
-   $(LETO_DIR)/source/client/leto1.c \
-   $(LETO_DIR)/source/client/letomgmn.c \
-   $(LETO_DIR)/source/common/blowfish.c \
-   $(LETO_DIR)/source/common/common_c.c \
-   $(LETO_DIR)/source/common/hbip.c \
+   $(HARBOUR_DIR)/hbnetio/netiocli.c \
    \
-   $(HARBOUR_DIR)/contrib/hbnetio/netiocli.c \
-   \
-   $(HARBOUR_DIR)/contrib/hbtip/encurlc.c \
-   $(HARBOUR_DIR)/contrib/hbtip/mime.c \
-   $(HARBOUR_DIR)/contrib/hbtip/misc.c
+   $(HARBOUR_DIR)/hbtip/encurlc.c \
+   $(HARBOUR_DIR)/hbtip/mime.c \
+   $(HARBOUR_DIR)/hbtip/misc.c
                                    
-LOCAL_C_INCLUDES += $(HARBOUR_DIR)/include \
-   $(HARBOUR_DIR)/src/compiler/$(HC_DIR) \
-   $(HARBOUR_DIR)/src/macro/$(HC_DIR) \
-   $(HARBOUR_DIR)/src/codepage \
-   $(HARBOUR_DIR)/src/3rd/pcre \
-   $(LETO_DIR)/include \
-   $(HARBOUR_DIR)/contrib/hbnetio \
-   $(HARBOUR_DIR)/contrib/hbtip \
-   $(HARBOUR_DIR)/contrib/hbssl \
-   \android\android-ndk-r10d\platforms\android-19\arch-arm\usr\include
+LOCAL_C_INCLUDES += $(HARBOUR_INC)/include \
+   $(HARBOUR_INC)/src/compiler \
+   $(HARBOUR_INC)/src/macro \
+   $(HARBOUR_INC)/src/codepage \
+   $(HARBOUR_INC)/src/3rd/pcre \
+   $(HARBOUR_INC)/hbnetio \
+   $(HARBOUR_INC)/hbtip \
+   $(HARBOUR_INC)/hbssl \
+   $(NDK_HOME)\platforms\$(NDK_PLATFORM)\arch-arm\usr\include
                     
 LOCAL_LDLIBS := -llog 
-
 include $(BUILD_SHARED_LIBRARY)
